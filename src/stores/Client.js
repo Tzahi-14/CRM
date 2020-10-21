@@ -1,4 +1,4 @@
-import { observable, makeObservable } from 'mobx'
+import { observable, makeObservable, action } from 'mobx'
 
 export default class Person {
     id
@@ -29,9 +29,15 @@ export default class Person {
             emailType: observable,
             sold: observable,
             owner: observable,
-            country: observable
+            country: observable,
+            updateClient : action
         })
-     
     }
+    updateClient (firstName,lastName,country){
+       this.firstName=firstName
+       this.lastName = lastName
+       this.country = country
+    }
+
 }
 

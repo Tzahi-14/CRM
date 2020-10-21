@@ -5,13 +5,14 @@ import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
 import NavBar from './components/NavBar'
 import Clients from './components/Clients/Clients'
 import Actions from './components/Actions/Actions'
-import Analytics from './components/Analytics/Analytics'
+import Analytics from './components/Anlalytics/Analytics'
 import data from './data.json'
 
 
-const App = inject('list')(observer((props)=>{
+const App = inject('company')(observer((props)=>{
+
   useEffect(() => {
-    props.list.getList(data)
+    props.company.getClientList(data)
   }, [])
 
   return (
