@@ -7,6 +7,7 @@ import Clients from './components/Clients/Clients'
 import Actions from './components/Actions/Actions'
 import Analytics from './components/Anlalytics/Analytics'
 import data from './data.json'
+import ClientsTable from './components/Clients/ClientsTable';
 
 
 const App = inject('company')(observer((props)=>{
@@ -19,7 +20,7 @@ const App = inject('company')(observer((props)=>{
     <Router>
       <div className="App">
         <NavBar />
-        <Route exact path="/clients" render={() => <Clients />} />
+        <Route exact path="/clients" render={() => <ClientsTable />} />
         <Route exact path="/actions" render={() => <Actions />} />
         <Route exact path="/analytics" render={() => <Analytics />} />
     </div>

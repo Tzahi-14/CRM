@@ -38,7 +38,7 @@ const ClientsTable = inject("company")(observer((props) => {
             <TableContainer >
             {/* <TableContainer className={classes.container}> */}
                 <UpdateClientPopUp click={handleClick} update={handleUpdate} open={updatePopUp.open} />
-                <Table>
+                <Table stickyHeader>
                     <TableHeaders />
                     <Clients page={page} rowsPerPage={rowsPerPage} click={handleClick} />
                 </Table>

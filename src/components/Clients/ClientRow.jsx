@@ -9,28 +9,40 @@ const ClientRow = inject('company')(observer((props) => {
 
     const clientList = props.company.clientList
 
+    // const click = (event) => {
+    //     const tableRow =
+    //         event.target.tagName === "TR" ? event.target : event.target.closest("tr")
+    //     // const rowData = props.rows.find(
+    //     //   (row) => row.code === parseInt(tableRow.getAttribute("data-id"))
+    //     // )
+    //     const rowId = clientList.id
+    //     console.log(tableRow)
+    //     console.log(props.client.id)
+    //     // console.log(rowData)
+    //     prompt("enter text")
+    //     // props.UpdateClientPopUp(tableRow)
+    // }
+
+    const click = () => {
+        console.log(props.client.id)
+
+
+    }
     console.log(props)
     console.log(clientList)
-    // const name = clientList.name.split(" ")
-    // const firstName = name[0]
-    // const lastName = name[1]
+    const a = props.client
     return (
-        <div>
-            
-        <span>{clientList.id}</span>
-        <span>{clientList.firstName}</span>
-        <span>{clientList.lastName}</span>
-        </div>
-        // <TableRow key={clientList.id}>
-        //     <TableCell>{clientList.firstName}</TableCell>
-        //     <TableCell>{clientList.lastName}</TableCell>
-        //     <TableCell>{clientList.email}</TableCell>
-        //     <TableCell>{clientList.firstContact}</TableCell>
-        //     <TableCell>{clientList.emailType}</TableCell>
-        //     <TableCell>{clientList.sold}</TableCell>
-        //     <TableCell>{clientList.owner}</TableCell>
-        //     <TableCell>{clientList.country}</TableCell>
-        // </TableRow>
+        <TableRow onClick={click}>
+            <TableCell>{a.firstName}</TableCell>
+            <TableCell>{a.lastName}</TableCell>
+            <TableCell>{a.email}</TableCell>
+            <TableCell>{a.firstContact}</TableCell>
+            <TableCell>{a.emailType}</TableCell>
+            <TableCell>{a.sold === true ? "sold" : "on process"}</TableCell>
+            <TableCell>{a.owner}</TableCell>
+            <TableCell>{a.country}</TableCell>
+        </TableRow>
+    
     )
 
 }))
