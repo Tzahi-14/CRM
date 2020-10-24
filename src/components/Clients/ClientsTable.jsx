@@ -16,7 +16,9 @@ const ClientsTable = inject("company")(observer((props) => {
     }
 
     const handleUpdate = (data)=>{
+        console.log(data)
         updatePopUp.clientToUpdate.updateClient(data.firstName,data.lastName,data.country)
+        // updatePopUp.clientToUpdate.updateClientList(data.firstName,data.lastName,data.country)
         setUpdatePopUp({open:false, clientToUpdate: {}})
     }
 
@@ -25,18 +27,21 @@ const ClientsTable = inject("company")(observer((props) => {
     }
 
     const handleChangeRowsPerPage = (e)=>{
-        setRowsPerPage(+e.target.value)
+        setRowsPerPage(e.target.value)
         setPage(0)
     }
 
 
+    
 
     return (
-
+        
         <Paper >
+           {/* { props.company.clientList.map(client=> client)} */}
         {/* <Paper className={classes.root}> */}
-            <TableContainer >
+            <TableContainer > 
             {/* <TableContainer className={classes.container}> */}
+            {/* {props.company.clientList.map(client=> <UpdateClientPopUp click={handleClick} update={handleUpdate} open={updatePopUp.open} client={client}/>)} */}
                 <UpdateClientPopUp click={handleClick} update={handleUpdate} open={updatePopUp.open} />
                 <Table stickyHeader>
                     <TableHeaders />
@@ -47,7 +52,9 @@ const ClientsTable = inject("company")(observer((props) => {
                 rowsPerPageOptions={[10, 25, 100]}
                 component="div"
                 // count={rows.length}
+                count="800"
                 rowsPerPage={rowsPerPage}
+                // rowsPerPage="50"
                 page={page}
                 onChangePage={handleChangePage}
                 onChangeRowsPerPage={handleChangeRowsPerPage}

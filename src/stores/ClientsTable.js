@@ -21,7 +21,8 @@ export default class ClientsTable{
     }
 
     handleUpdate(data){
-        this.popup.clientToUpdate.updateClient(data.)
+        console.log(data)
+        // this.popup.clientToUpdate.updateClient(data.)
     }
 
 

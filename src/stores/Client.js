@@ -21,7 +21,6 @@ export default class Person {
         this.owner = _owner
         this.country = _country
         makeObservable(this, {
-            id: observable,
             firstName: observable,
             lastName: observable,
             email: observable,

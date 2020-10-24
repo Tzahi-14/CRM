@@ -9,7 +9,6 @@ const UpdateClientPopUp = inject("company")(observer((props) => {
 
     const inputHandler = (e) => {
         const { value, name } = e.target
-        
         if(name ==='setFirstName'){
             setFirstName(value)
         }
@@ -20,9 +19,28 @@ const UpdateClientPopUp = inject("company")(observer((props) => {
             setCountry(value)
         }
     }
+   
+const emptySate = ()=>{
+    setCountry("")
+}
+
+// const updateData = ()=>{
+//     // console.log(props)
+//     // console.log(props.clientToUpdate)
+//     props.update(props.client.id,firstName,lastName,country) 
+// }
+
+const updateData = () =>{
+    // props.company.updateClient()
+    // props.company.clientList.map(a=>console.log(a.id))
+
+}
+// const id = props.company.clientList.map(a=>console.log(a.id))
+
 
     return (
         <div>
+            {/* {console.log(props)} */}
             <Dialog onClose={() => { props.click(false) }} aria-labelledby="simple-dialog-title" open={props.open}>
                 <DialogTitle id="simple-dialog-title">Update</DialogTitle>
                 <DialogContent>
@@ -32,7 +50,8 @@ const UpdateClientPopUp = inject("company")(observer((props) => {
                 </DialogContent>
                 <DialogActions>
                     <Button onClick={() =>{props.click({open:false, clientToUpdate: {}})}} variant="contained" color="primary" > X</Button>
-                    <Button onClick={() =>{props.update({open:false, clientToUpdate: {}})}} variant="contained" color="primary" > Update</Button>
+                    <Button onClick={() =>{props.update({firstName,lastName,country})}} variant="contained" color="primary" > Update</Button>
+                    {/* <Button onClick={updateData} variant="contained" color="primary" > Update</Button> */}
                 </DialogActions>
             </Dialog>
         </div>

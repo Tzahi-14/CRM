@@ -8,7 +8,7 @@ export default class Company {
             clientList: observable,
             numItems: computed,
             getClientList: action,
-            // updateList: action
+            // updateClient: action
         })
     }
     get numItems() {
@@ -20,16 +20,30 @@ export default class Company {
             const fullName = a.name.split(" ")
             const firstName = fullName[0]
             const lastName = fullName[1]
-            const person = new Client(a._id, firstName,lastName, a.email, a.firstContact, a.emailType, a.sold, a.owner, a.country)
+            const person = new Client(a._id, firstName, lastName, a.email, a.firstContact, a.emailType, a.sold, a.owner, a.country)
             this.clientList.push(person)
         });
     }
 
-    // updateClientList(id, text) {
-    //     console.log(id)
-    //     console.log(text)
-    //     const person = this.list.find(p => p.id === id)
-    //     person.text = text
+    // updateClient(id, _firstName, _lastName, _country) {
+    //     let findId = this.clientList.find(a => a.id === id)
+    //     console.log(findId)
+    //     if (findId) {
+    //         findId.firstName = _firstName
+    //         findId.lastName = _lastName
+    //         findId.country = _country
+    //     }
+    // }
+
+    addClient = () => {
+        const client = new Client()
+    }
+
+    // updateClientList(data) {
+    //     console.log(data)
+
+    //     // const person = this.list.find(p => p.id === id)
+    //     // person.text = text
     // }
 
 }

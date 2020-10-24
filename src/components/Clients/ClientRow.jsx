@@ -23,16 +23,17 @@ const ClientRow = inject('company')(observer((props) => {
     //     // props.UpdateClientPopUp(tableRow)
     // }
 
-    const click = () => {
-        console.log(props.client.id)
-
-
+    const clickRow = () => {
+        // console.log(props.client.id)
+        console.log(props.client)
+    //    return <UpdateClientPopUp id={props.client.id}/>
+        props.click({open:true,clientToUpdate: props.client})
     }
-    console.log(props)
-    console.log(clientList)
+    // console.log(props)
+    // console.log(clientList)
     const a = props.client
     return (
-        <TableRow onClick={click}>
+        <TableRow onClick={()=> clickRow()} person={props.client} >
             <TableCell>{a.firstName}</TableCell>
             <TableCell>{a.lastName}</TableCell>
             <TableCell>{a.email}</TableCell>
@@ -42,6 +43,7 @@ const ClientRow = inject('company')(observer((props) => {
             <TableCell>{a.owner}</TableCell>
             <TableCell>{a.country}</TableCell>
         </TableRow>
+        
     
     )
 
