@@ -38,8 +38,8 @@ const ClientRow = inject('company')(observer((props) => {
             <TableCell>{a.lastName}</TableCell>
             <TableCell>{a.email}</TableCell>
             <TableCell>{a.firstContact}</TableCell>
-            <TableCell>{a.emailType}</TableCell>
-            <TableCell>{a.sold === true ? "sold" : "on process"}</TableCell>
+            <TableCell>{a.sold === 1 ? "sold" : "on process"}</TableCell>
+            <TableCell>{a.type}</TableCell>
             <TableCell>{a.owner}</TableCell>
             <TableCell>{a.country}</TableCell>
         </TableRow>

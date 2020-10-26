@@ -4,12 +4,13 @@ import { Paper, Table, TableContainer, TablePagination } from '@material-ui/core
 import TableHeaders from './TableHeaders'
 import Clients from './Clients'
 import UpdateClientPopUp from './UpdateClientPopUp'
+import ClientSearch from './ClientSearch'
 
 const ClientsTable = inject("company")(observer((props) => {
 
-    const [updatePopUp,setUpdatePopUp] = useState({ open:false , clientToUpdate: {}})
-    const [page,setPage] = useState(0)
-    const [rowsPerPage,setRowsPerPage] = useState(10)
+    let [updatePopUp,setUpdatePopUp] = useState({ open:false , clientToUpdate: {}})
+    let [page,setPage] = useState(0)
+    let [rowsPerPage,setRowsPerPage] = useState(10)
 
     const handleClick = (objValue)=>{
         setUpdatePopUp(objValue)
@@ -22,7 +23,11 @@ const ClientsTable = inject("company")(observer((props) => {
         setUpdatePopUp({open:false, clientToUpdate: {}})
     }
 
-    const handleChangePage =(newPage)=>{
+    const handleChangePage =(event,newPage)=>{
+        // console.log(e)
+        console.log(page)
+        console.log(newPage)
+        console.log("hey")
         setPage(newPage)
     }
 
@@ -32,7 +37,7 @@ const ClientsTable = inject("company")(observer((props) => {
     }
 
 
-    
+    // console.log(props.company.clientList.length)
 
     return (
         
@@ -49,10 +54,10 @@ const ClientsTable = inject("company")(observer((props) => {
                 </Table>
             </TableContainer>
             <TablePagination
+            
                 rowsPerPageOptions={[10, 25, 100]}
                 component="div"
-                // count={rows.length}
-                count="800"
+                count={props.company.clientList.length}
                 rowsPerPage={rowsPerPage}
                 // rowsPerPage="50"
                 page={page}

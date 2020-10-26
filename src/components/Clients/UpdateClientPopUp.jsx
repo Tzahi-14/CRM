@@ -20,7 +20,7 @@ const UpdateClientPopUp = inject("company")(observer((props) => {
         }
     }
    
-const emptySate = ()=>{
+const emptyState = ()=>{
     setCountry("")
 }
 
@@ -30,11 +30,7 @@ const emptySate = ()=>{
 //     props.update(props.client.id,firstName,lastName,country) 
 // }
 
-const updateData = () =>{
-    // props.company.updateClient()
-    // props.company.clientList.map(a=>console.log(a.id))
 
-}
 // const id = props.company.clientList.map(a=>console.log(a.id))
 
 
@@ -51,7 +47,6 @@ const updateData = () =>{
                 <DialogActions>
                     <Button onClick={() =>{props.click({open:false, clientToUpdate: {}})}} variant="contained" color="primary" > X</Button>
                     <Button onClick={() =>{props.update({firstName,lastName,country})}} variant="contained" color="primary" > Update</Button>
-                    {/* <Button onClick={updateData} variant="contained" color="primary" > Update</Button> */}
                 </DialogActions>
             </Dialog>
         </div>

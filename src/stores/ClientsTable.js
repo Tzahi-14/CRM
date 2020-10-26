@@ -1,30 +1,30 @@
 import { observable, makeObservable, action} from 'mobx'
 
-export default class ClientsTable{
-    popup
-    page
-    rowsPerPage
-    constructor(_popup,_page,_rowsPerPage) {
-        this.popup=_popup,
-        this.page=_page,
-        this.rowsPerPage=_rowsPerPage,
+// export default class ClientsTable{
+//     popup
+//     page
+//     rowsPerPage
+//     constructor(_popup,_page,_rowsPerPage) {
+//         this.popup=_popup,
+//         this.page=_page,
+//         this.rowsPerPage=_rowsPerPage,
 
-        makeObservable(this, {
-            popup: observable,
-            page: observable,
-            rowsPerPage: observable,
-        })
-    }
+//         makeObservable(this, {
+//             popup: observable,
+//             page: observable,
+//             rowsPerPage: observable,
+//         })
+//     }
 
-    handleClick(val) {
-        this.popup = val
-    }
+//     handleClick(val) {
+//         this.popup = val
+//     }
 
-    handleUpdate(data){
-        console.log(data)
-        // this.popup.clientToUpdate.updateClient(data.)
-    }
+//     handleUpdate(data){
+//         console.log(data)
+//         // this.popup.clientToUpdate.updateClient(data.)
+//     }
 
 
 
-}
+// }

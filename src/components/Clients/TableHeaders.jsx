@@ -14,8 +14,8 @@ const TableHeaders = inject("company")(observer((props) => {
                 <TableCell>Last Name</TableCell>
                 <TableCell>email</TableCell>
                 <TableCell>firstContact</TableCell>
-                <TableCell>emailType</TableCell>
                 <TableCell>sold</TableCell>
+                <TableCell>email Type</TableCell>
                 <TableCell>owner</TableCell>
                 <TableCell>country</TableCell>
             </TableRow>
